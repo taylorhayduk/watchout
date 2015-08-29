@@ -9,7 +9,7 @@ var svg = d3.select('body')
     .attr('height', gameHeight);
 
 var createEnemies = function() {
-  return _.range(enemyCount).map(function(i){
+  return d3.range(enemyCount).map(function(i){
     return {id: i, x: Math.random() * gameWidth, y: Math.random() * gameHeight};
   });
 };
@@ -36,7 +36,7 @@ var player = svg.append('circle')
 
 var update = function(data) {
   svg.selectAll('circle').data(data)
-    .attr('r', 5)
+    .transition().duration(800)
     .attr('cx', function(d){return d.x;})
     .attr('cy', function(d){return d.y;});
 };
@@ -44,4 +44,4 @@ var update = function(data) {
 
 setInterval(function() {
   update(createEnemies());
-}, 500);
+}, 1000);
