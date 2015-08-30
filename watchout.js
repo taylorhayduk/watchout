@@ -13,8 +13,9 @@ var svg = d3.select('body')
   .append('svg')
   .attr({
       "width": gameWidth,
-      "height": gameHeight
-  });
+      "height": gameHeight,
+  })
+  .style('border', '5px solid black');
 
 var createEnemies = function() {
   return d3.range(enemyCount).map(function(i){
