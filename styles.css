@@ -6,3 +6,24 @@ Feel free to use it if you like. */
 .player {
   fill: red;
 }
+
+
+@keyframes example {
+    0%   {fill: red; /*transform: rotate(1turn);*/}
+    25%  {fill: purple; /*transform: rotate(180deg);*/}
+    50%  {fill: blue; /*transform: rotate(270deg);*/}
+    100% {fill: green; /*transform: rotate(380deg);*/}
+}
+
+@keyframes spin {
+  from {transform:rotate(0deg);}
+  to {transform:rotate(360deg);}
+}
+
+.enemy {
+  fill:white;
+  stroke: black;
+  stroke-width: 5;
+  stroke-dasharray: 5, 5;
+  animation: spin 1s linear infinite;
+}
